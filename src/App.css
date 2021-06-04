@@ -1,0 +1,6 @@
+.MuiTypography-body1{
+    font-weight: 500 !important;
+}
+.MuiFilledInput-underline::before{
+    border-bottom: none !important;
+}
