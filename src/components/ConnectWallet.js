@@ -7,7 +7,6 @@ function ConnectWallet() {
                 <div className="container px-sm-5 pt-5">
                     <h1 className=" mb-4" style={{
                         fontWeight:"300"
-                        
                     }}>Connect your wallet</h1>
                     <h5 className="mb-3">Pick a wallet to connect to Chain.Gallery</h5>
                     <div className="wallet_img w-100 mt-5">

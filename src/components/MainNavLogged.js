@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 
-function MainNav() {
+function MainNavLogged() {
     return (
         <>
         <section className="main_nav bg-white" 
@@ -36,8 +36,29 @@ function MainNav() {
                             
                         </li>
                         <li className="nav-item">
-                        <Link to="/Sign_in" style={{color: "unset", textDecoration: 'none' }}> <a className="nav-link me-3" href="#" style={{color:'black'}}>Login</a></Link>
-                            
+                        <a className="nav-link me-3" style={{color:'black'}}>
+
+                        <div className="dropdown">
+                        <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <img src="/img/artist.png" alt="" style={{width: "31px"}} />
+                            <img src="/img/expend.png" alt="" className="ms-2" /></button>
+                                <ul className="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="dropdownMenuButton1">
+                                <div className="over_user d-flex align-items-center" style={{ width: "275px"}}>
+                                    <img src="/img/artist.png" alt="" className="p-1 ms-1 " style={{width: "90px", height: "90px" }}/>
+                                    <div className="over_user_detail ms-2   ">
+                                        <h3 style={{fontWeight:"300"}}>User Name</h3>
+                                        <h6>@username</h6>
+                                    </div>
+                                </div>
+                                    <li className="mt-3 ms-2"> <Link to="/Userproflie" style={{color: "unset", textDecoration: 'none' }}> <a className="dropdown-item" href="#"><h6 className="my-1">Profile</h6></a></Link></li>
+                                    <li className=" ms-2"><Link to="/Dashboard" style={{color: "unset", textDecoration: 'none' }}> <a className="dropdown-item" href="#"><h6 className="my-1">Dashboard</h6></a></Link></li>
+
+                                    <li className=" ms-2"><Link to="/Setting" style={{color: "unset", textDecoration: 'none' }}> <a className="dropdown-item" href="#"><h6 className="my-1">Setting</h6></a></Link></li>
+                                    <br/>
+                                    <li className=" ms-2"><a className="dropdown-item" href="#"><h6 className="my-1">Logout</h6></a></li>
+                                </ul>
+                        </div>
+                        </a>
+
                         </li>
         
                     </ul>
@@ -47,7 +68,7 @@ function MainNav() {
                 {/*  
                 
                 
-                 <nav className="navbar navbar-expand-lg navbar-light mt-3">
+                <nav className="navbar navbar-expand-lg navbar-light mt-3">
                     <a className="navbar-brand" href="#"><img src="/img/Chain.Gallery.png"/></a>
                     * <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="/img/menu_icon.png"/>
@@ -67,4 +88,4 @@ function MainNav() {
     )
 }
 
-export default MainNav
+export default MainNavLogged

@@ -1,6 +1,7 @@
 import React from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Typography from '@material-ui/core/Typography';
 
 
 function FilterSwitch() {
@@ -15,7 +16,7 @@ function FilterSwitch() {
                 <FormControlLabel
                     value="start"
                     control={<Checkbox  color="primary" />}
-                    label="Birth"
+                    label={<Typography style={{fontWeight:"500"}}> Birth </Typography>}
                     labelPlacement="start"
                 />
 	
@@ -23,7 +24,10 @@ function FilterSwitch() {
                 <FormControlLabel 
                     value="start"
                     control={<Checkbox  color="primary" />}
-                    label="Burn" 
+                    label={<Typography style={{fontWeight:"500"}}> 
+                Burn 
+        </Typography>}
+                    
                     labelPlacement="start" 
                 />
                 

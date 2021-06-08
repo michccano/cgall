@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/user.css";
 import Cover from "./components/Cover";
-import MainNav from "./components/MainNav";
+import MainNavLogged from "./components/MainNavLogged";
 import Userdetails from "./components/Userdetails";
 import Tabs from "./components/Tabs";
 import Userfooter from "./components/Userfooter";
@@ -9,7 +9,7 @@ import Userfooter from "./components/Userfooter";
 function Userproflie() {
     return (
         <>
-            <MainNav />
+            <MainNavLogged />
             <Cover />
             <Userdetails />
             <Tabs />

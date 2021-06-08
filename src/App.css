@@ -1,6 +1,6 @@
-.MuiTypography-body1{
-    font-weight: 500 !important;
-}
-.MuiFilledInput-underline::before{
+.MuiFilledInput-underline::before {
     border-bottom: none !important;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
 }

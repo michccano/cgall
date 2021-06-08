@@ -31,16 +31,23 @@ function Userdetails() {
                     </div>
                     <div className="col-md-6 text-end merawala">
                     <div className="w-100 mb-5">
-                    <Button variant="contained" className="font-weight-light me-2" style={{
+                    <Button variant="contained" className="font-weight-light me-2 px-4" style={{
                     backgroundColor: "#FFF",
                     color:"#4032E5",
-                    border: "1px solid #4032E5"
+                    border: "1px solid #4032E5",
+                    borderRadius : "0",
+                    letterSpacing: "2px",
+
+                    
                     }}>
                     SHARE
                     </Button>
-                    <Button variant="contained" className="font-weight-light" style={{
+                    <Button variant="contained" className="font-weight-light px-4" style={{
                     backgroundColor: "#4032E5",
-                    color:"#ffffff"
+                    color:"#ffffff",
+                    borderRadius : "0",
+                    letterSpacing: "2px",
+                    border: "1px solid #4032E5"
                     }}>
                     EDIT PROFILE
                     </Button>

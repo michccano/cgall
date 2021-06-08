@@ -11,8 +11,12 @@ import "./css/responsive.css";
 import GalleryPage from "./GalleryPage";
 import MarketPage from "./MarketPage";
 import ActivityPage from "./ActivityPage";
-
+import SignInPage from "./SignInPage"
 import HomePage from "./HomePage";
+import Register from "./Register";
+import Home_login from "./Home_login";
+import Dashboard from "./Dashboard";
+import SettingPage from "./SettingPage";
 
 
 function App() {
@@ -26,7 +30,11 @@ function App() {
             <Route exact path="/Gallery" component={GalleryPage}/>
             <Route exact path="/Market" component={MarketPage}/>
             <Route exact path="/Activity" component={ActivityPage}/>
-
+            <Route exact path="/Sign_in" component={SignInPage}/>
+            <Route exact path="/Register" component={Register}/>
+            <Route exact path="/Home_login" component={Home_login}/>
+            <Route exact path="/Dashboard" component={Dashboard}/>
+            <Route exact path="/Setting" component={SettingPage}/>
         </>
         </HashRouter>
     );
