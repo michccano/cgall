@@ -1,12 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 function Basic_info() {
+    
+    
+
     return (
         <>
+        <div className="basic_info">
         <div className="d-flex align-items-center flex-wrap ">
         <h1 className="fw-light">Basic Info</h1>
-        <Link /*to="/Gallery"*/ ><h6 style={{marginLeft:"16px", fontSize: "14px", color:"#4737FF"}}><i class="fas fa-edit"></i> Edit</h6></Link>  
+        <Link   /*to="/Gallery"*/  ><h6 style={{marginLeft:"16px", fontSize: "14px", color:"#4737FF"}}><i class="fas fa-edit"></i> Edit</h6></Link>  
         </div>
         <div className="row mt-5">
             <div className="col-sm-3">
@@ -59,6 +64,7 @@ function Basic_info() {
                 <img src="/img/cover.png" className="w-100" alt="" />
                 </div>
             </div>
+        </div>
         </div>
         </>
     )

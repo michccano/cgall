@@ -1,8 +1,9 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
-
-
-
+import Followers from './Followers'
+import Cancel_btn from './Cancel_btn'
+import Unfollow_btn from './Unfollow_btn'
+import Following from './Following'
 function Userdetails() {
     return (
         <>
@@ -54,12 +55,96 @@ function Userdetails() {
                     </div>
                     <div className="follow w-100 mb-4">
                     <ul >
-                        <li> <b>10</b> followers</li>
-                        <li> <b>32</b> following</li>
+                        <li data-bs-toggle="modal" data-bs-target="#exampleModal2" style={{cursor : "pointer"}}> <b>10</b> followers</li>
+                        <li  data-bs-toggle="modal" data-bs-target="#exampleModal4" style={{cursor : "pointer"}}> <b>32</b> following</li>
                         <li> <b>9</b> views</li>
                     </ul>
+
+
+{/* <!-- Modal --> */}
+<div className="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+    <div className="modal-content">
+        <div className="modal-header border-0">
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div className="modal-body ">
+        <h3 className="text-center fw-light mb-3 position-sticky" >Followers</h3>
+            <Followers/>
+            <Followers/>
+            <Following/>
+            <Followers/>
+            <Followers/>
+            <Following/>
+            <Followers/>
+            <Followers/>
+            <Followers/>
+            <Followers/>
+            <Following/>
+            <Followers/>
+            <Followers/>
+            <Followers/>
+            <Followers/>
+            <Followers/>
+            <Followers/>
+            <Followers/>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<div className="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+    <div className="modal-content">
+        <div className="modal-header border-0">
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div className="modal-body ">
+        <h3 className="text-center fw-light mb-3 position-sticky" >Following</h3>
+        <Following/>
+        <Following/>
+        <Following/>
+        <Following/>
+        <Following/>
+        <Following/>
+        <Following/>
+        <Following/>
+        <Following/>
+
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<div className="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+    <div className="modal-content">
+        <div className="modal-header border-0">
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div className="modal-body ">
+        <div className="text-center mb-4">
+        <img className="rounded" src="/img/Artist.png" alt="" />
+        </div>
+        <h3 className="text-center fw-light mb-4 position-sticky">Unfollow @artistname?</h3>
+        <div className="d-flex justify-content-evenly pb-4 mt-3 ">
+        <Cancel_btn/>
+        <Unfollow_btn/>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+
                     </div>
-                    
                     <p className="">Joined: April 2021</p>
 
                     </div>

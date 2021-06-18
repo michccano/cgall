@@ -1,6 +1,10 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Artdetailtab from "./Artdetailtab";
+import MakeOfferModal_1 from "./MakeOfferModal_1";
+import MakeOfferModal_2 from "./MakeOfferModal_2";
+import MakeOfferModal_3 from "./MakeOfferModal_3";
+import MakeOfferModal_4 from "./MakeOfferModal_4";
 function Artdetail() {
     return (
         <>
@@ -39,6 +43,7 @@ function Artdetail() {
                                 variant="contained"
                                 className="font-weight-light mt-4 mb-5"
                                 style={{
+                                    textAlign: "center",
                                     backgroundColor: "#4737FF",
                                     color: "#fff",
                                     border: "1px solid #red",
@@ -49,12 +54,90 @@ function Artdetail() {
                                     boxShadow: " 0 0 1px 5px #A3B9FF",
                                     webkitBoxShadow: " 0 0 1px 5px #A3B9FF",
                                 }}
+                                data-bs-toggle="modal" href="#exampleModalToggle" 
                             >
                                 SIGN UP TO MAKE AN OFFER
                             </Button>
+
+
+{/* <!-- Modal --> */}
+<div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div className="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable " >
+    <div className="modal-content"  style={{
+               backgroundImage : "url(/img/modalBG.png)",
+               backgroundSize : "50% 100%",
+               backgroundRepeat :"no-repeat"
+            }}>
+      <div className="modal-header border-0">
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body" >
+      <MakeOfferModal_1/>
+      </div>
+    </div>
+  </div>
+</div>
+<div className="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div className="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div className="modal-content"  style={{
+               backgroundImage : "url(/img/modalBG.png)",
+               backgroundSize : "50% 100%",
+               backgroundRepeat :"no-repeat"
+            }}>
+      <div className="modal-header border-0">
+       
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      <MakeOfferModal_2/>
+      </div>
+    </div>
+  </div>
+</div>
+<div className="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+  <div className="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div className="modal-content"  style={{
+               backgroundImage : "url(/img/modalBG.png)",
+               backgroundSize : "50% 100%",
+               backgroundRepeat :"no-repeat"
+            }}>
+      <div className="modal-header border-0">
+       
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      <MakeOfferModal_3/>
+      </div>
+    </div>
+  </div>
+</div>
+<div className="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+  <div className="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div className="modal-content"  style={{
+               backgroundImage : "url(/img/modalBG.png)",
+               backgroundSize : "50% 100%",
+               backgroundRepeat :"no-repeat"
+            }}>
+      <div className="modal-header border-0">
+       
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      <MakeOfferModal_4/>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
                             <ul
                                 className="d-flex"
-                                style={{
+                                style={{ 
+                                    cursor: "pointer",
                                     listStyle: "none",
                                     padding: 0,
                                 }}
@@ -68,11 +151,49 @@ function Artdetail() {
                                 <li className="mr-3">
                                     <i class="fas fa-eye"></i>138
                                 </li>
-                                <li className="mr-3">
-                                    <i class="fas fa-share-alt"></i> Share
+                                <li className="mr-3" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                                    <i class="fas fa-share-alt" ></i> Share
                                 </li>
                             </ul>
+
+
+
+
+                            {/* <!-- Share modal --> */}
+
+
+                                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div className="modal-dialog modal-dialog-centered">
+                                            <div className="modal-content">
+                                                <div className="modal-header border-0">
+                                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <h3 className="modal-title" id="exampleModalLabel"
+                                                        style={{
+                                                            fontWeight: "300",
+                                                            textAlign: "center"
+                                                        }}
+                                                    >Share this artwork</h3>
+                                                <div className="modal-body mb-4 mx-4">
+                                                        <div className="d-flex justify-content-around fs-1 py-3"> 
+                                                            <i class="fas fa-link"></i>
+                                                            <i class="fab fa-facebook"></i>
+                                                            <i class="fab fa-twitter"></i>
+                                                            <i class="fab fa-pinterest"></i>                              
+                                                        </div>
+                                                        <div className="d-flex justify-content-evenly fs-1 py-3"> 
+                                                            <i class="fas fa-envelope"></i>
+                                                            <i class="fab fa-facebook-messenger"></i>
+                                                            <i class="fab fa-whatsapp"></i>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                         </div>
+                        
+
+
                         <div className="col-md-6">
                             <Artdetailtab />
                         </div>

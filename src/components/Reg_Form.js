@@ -3,7 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Button, Typography } from '@material-ui/core';
-
+import Facebook_btn from './Facebook_btn';
+import Google_btn from './Google_btn';
 
 function Reg_Form() {
     return (
@@ -72,39 +73,8 @@ function Reg_Form() {
                                     color: '#707070',
                                     textAlign: 'center'
                                 }}>OR</h4>
-                                <div className="CW_img w-100 mt-4">
-                                
-                                <Button variant="outlined" style={{
-                                    width: "100%",
-                                    height: "50px",
-                                    backgroundColor: "#1C77F2",
-                                    color: "#fff",
-                                    borderRadius: "0",
-                                    position: "relative",
-                                    border: "none",
-                                    textTransform: "unset", fontSize: "18px"
-                                }}>&nbsp; Continue with Facebook <img style={{
-                                    position: "absolute",
-                                    left: "13px"
-                                }} src="/img/facebook_logo.png" alt="" /> </Button>
-                    
-                                
-                    </div>
-                    <div className="CW_img  w-100 mt-3 mb-4">
-                    <Button variant="outlined" style={{
-                                    width: "100%",
-                                    height: "50px",
-                                    backgroundColor: "#fff",
-                                    color: "#808080",
-                                    borderRadius: "0",
-                                    position: "relative",
-                                    textTransform: "unset",
-                                    fontSize: "18px"
-                            }}>Continue with google<img style={{
-                                position: "absolute",
-                                left: "13px"
-                            }} src="/img/google_logo.png" alt="" /> </Button>
-                    </div>
+                              <Facebook_btn/>
+                            <Google_btn/>
                     </div>
                 </div>
             </section>

@@ -34,6 +34,9 @@
     .single_activity {
         flex-direction: column;
     }
+    .modal-content {
+        background-size: 100% 50% !important;
+    }
 }
 @media (max-width: 768px) {
     body {
@@ -194,5 +197,9 @@
         display: flex;
         justify-content: center;
     }
-    
+    .mom_1 .col-lg-6 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0 !important;
+    }
 }

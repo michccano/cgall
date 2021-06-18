@@ -1,5 +1,6 @@
 import React from "react";
 import Mini_profile_lite from "./Mini_profile_lite";
+import { Link } from 'react-router-dom';
 
 function Primary_work_card() {
     return (
@@ -13,11 +14,13 @@ function Primary_work_card() {
                     boxShadow: " 0 0 4px 0 #c4c4c4"
                 }}
             >
+              <Link to="/Singleart" style={{color: "unset", textDecoration: 'none' }}> 
                 <img
                     src="/img/nothing_2.png"
                     className="card-img-top"
                     alt="..."
                 />
+                </Link>  
                 <div className="card-body">
                     <h4 className="card-title">artwork name</h4>
                     <Mini_profile_lite />

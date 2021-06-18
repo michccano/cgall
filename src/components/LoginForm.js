@@ -2,7 +2,8 @@ import React from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 import { Link } from 'react-router-dom';
-
+import Facebook_btn from './Facebook_btn'
+import Google_btn from './Google_btn';
 function LoginForm() {
     return (
         <>
@@ -52,41 +53,11 @@ function LoginForm() {
                                     color: '#707070',
                                     textAlign: 'center'
                                 }}>OR</h4>
-                   <div className="CW_img w-100 mt-4">
-                   <Link to="/Home_login" style={{color: "unset", textDecoration: 'none' }}>
-                                <Button variant="outlined" style={{
-                                    width: "100%",
-                                    height: "50px",
-                                    backgroundColor: "#1C77F2",
-                                    color: "#fff",
-                                    borderRadius: "0",
-                                    position: "relative",
-                                    border: "none",
-                                    textTransform: "unset", fontSize: "18px"
-                                }}>&nbsp; Continue with Facebook <img style={{
-                                    position: "absolute",
-                                    left: "13px"
-                                }} src="/img/facebook_logo.png" alt="" /> </Button>
+
+<Facebook_btn/>
+<Google_btn/>
                     
-                    </Link>
-                    </div>
-                    <div className="CW_img  w-100 mt-3 mb-4">
-                    <Link to="/Home_login" style={{color: "unset", textDecoration: 'none' }}>
-                    <Button variant="outlined" style={{
-                                    width: "100%",
-                                    height: "50px",
-                                    backgroundColor: "#fff",
-                                    color: "#808080",
-                                    borderRadius: "0",
-                                    position: "relative",
-                                    textTransform: "unset",
-                                    fontSize: "18px"
-                                }}>Continue with google<img style={{
-                                    position: "absolute",
-                                    left: "13px"
-                                }} src="/img/google_logo.png" alt="" /> </Button>
-                                </Link>
-                    </div>
+                    
                     <p>By logging in, you agree to our <a href="#" style={{
                         color: "#4032E5"
                     }}>Terms of Use</a> and <a href="#" style={{

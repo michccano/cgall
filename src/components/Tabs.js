@@ -17,7 +17,6 @@ function Tabs() {
                         <button className={ toggleState === 1 ? "tabs active-tabs" : "tabs"}
                             onClick={() => toggleTab(1)}> Creations
                         </button>
-                        
                         <button
                             className={ toggleState === 2 ? "tabs active-tabs" : "tabs"}
                             onClick={() => toggleTab(2)}> Collection
