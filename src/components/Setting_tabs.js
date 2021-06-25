@@ -22,7 +22,6 @@ function Setting_tabs() {
                 <div className="setting_holder mb-5">
 
                     <div className="setting_tabs">
-                   
                         <button className={ toggleState === 1 ? "set_tabs active-setting-tabs" : "set_tabs"}
                             onClick={() => toggleTab(1)}> Profile
                         </button>
@@ -50,7 +49,9 @@ function Setting_tabs() {
                                 ? "setting-content  active-setting-content"
                                 : "setting-content"}>
                         <Basic_info/>
+                    
                         <Social_link/>
+                
                         
                     </div>
 
@@ -59,7 +60,9 @@ function Setting_tabs() {
                                 ? "setting-content  active-setting-content"
                                 : "setting-content" }>
                             <EmailPassword/>
+                         
                             <ConnectSocial/>
+                        
                     </div>
                     <div className={
                             toggleState === 3
