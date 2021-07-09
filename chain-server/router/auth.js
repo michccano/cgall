@@ -1,6 +1,7 @@
+const jwt = require("jsonwebtoken");
 const express = require("express");
 const router = express();
-
+const bcrypt = require("bcrypt");
 require("../db/db_con");
 const User = require("../model/userSchema");
 
@@ -26,6 +27,8 @@ router.post("/register", async (req, res) => {
         const userExist = await User.findOne({ email: email });
         if (userExist) {
             return res.status(422).json({ error: "Email already Exist " });
+        } else if (email != cemail) {
+            return res.status(422).json({ error: "Email are not same " });
         }
 
         const user = new User({ name, fullName, email, cemail, password });
@@ -52,11 +55,27 @@ router.post("/login", async (req, res) => {
         }
 
         const userLogin = await User.findOne({ email: email });
-        console.log(userLogin);
-        if (!userLogin) {
-            res.status(400).json({ error: "user error" });
+
+        // console.log(userLogin);
+
+        if (userLogin) {
+            const isMatch = await bcrypt.compare(password, userLogin.password);
+
+            const token = await userLogin.generateAuthToken();
+            console.log(token);
+
+            // res.cookie("jwtoken", token, {
+            //     expires: new Date(Date.now() + 25892000000),
+            //     httpOnly: true,
+            // });
+
+            if (!isMatch) {
+                res.status(400).json({ error: "Invalid Password" });
+            } else {
+                res.json({ message: "login successful" });
+            }
         } else {
-            res.json({ message: "login successful" });
+            res.status(400).json({ error: "wrong email" });
         }
     } catch (err) {
         console.log(err);
