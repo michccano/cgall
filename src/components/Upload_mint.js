@@ -5,11 +5,11 @@ function Upload_mint() {
     return (
         <>
             <div className="upload_mint">
-                <h1 className="fw-light mb-5">NFT Info</h1>
-
                 <div className="all_upload_info">
                     <div className="row">
                         <div className="col-lg-8">
+                            <h1 className="fw-light mb-5">NFT Info</h1>
+
                             <div className="row">
                                 <div className="col-sm-3 align-self-center">
                                     <h6>Title*</h6>
@@ -138,7 +138,7 @@ function Upload_mint() {
                             </div>
                         </div>
                         <div className="col-lg-4">
-                            <h5 className="mb-4">Preview</h5>
+                            <h5 className="mt-3 mb-5">Preview</h5>
                             <Preview_card />
                         </div>
                     </div>

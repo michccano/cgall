@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import { Button, Typography } from "@material-ui/core";
+import { Button, TableBody, Typography } from "@material-ui/core";
 import Facebook_btn from "./Facebook_btn";
 import Google_btn from "./Google_btn";
 
 function Reg_Form() {
+    const history = useHistory();
+
     const [user, setUser] = useState({
         name: "",
         fullName: "",
@@ -24,11 +27,43 @@ function Reg_Form() {
 
         setUser({ ...user, [name]: value });
     };
+
+    const postData = async (e) => {
+        e.preventDefault();
+
+        const { name, fullName, email, cemail, password } = user;
+
+        const res = await fetch("/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name,
+                fullName,
+                email,
+                cemail,
+                password,
+            }),
+        });
+
+        const data = await res.json();
+
+        if (res.status === 422 || !data) {
+            window.alert("Regestration failed");
+        } else {
+            window.alert("Regestration Done");
+
+            history.push("/Sign_in");
+        }
+    };
+
     return (
         <>
             <section className="reg_form  bg-white">
                 <div className="container">
-                    <div
+                    <form
+                        method="POST"
                         className="reg_form_div"
                         style={{
                             maxWidth: "540px",
@@ -44,14 +79,16 @@ function Reg_Form() {
                         >
                             Register
                         </h1>
+
                         <TextField
+                            value={user.name}
+                            onChange={handleInputs}
+                            name="name"
                             id="filled-basic"
                             label="Username "
                             variant="filled"
                             className="w-100"
                             required
-                            // value={user.name}
-                            // onChange={handleInputs}
                         />
 
                         <TextField
@@ -60,8 +97,9 @@ function Reg_Form() {
                             variant="filled"
                             className="w-100 my-3"
                             required
-                            // value={user.fullName}
-                            // onChange={handleInputs}
+                            value={user.fullName}
+                            onChange={handleInputs}
+                            name="fullName"
                         />
 
                         <TextField
@@ -71,8 +109,9 @@ function Reg_Form() {
                             type="email"
                             className="w-100"
                             required
-                            // value={user.email}
-                            // onChange={handleInputs}
+                            value={user.email}
+                            onChange={handleInputs}
+                            name="email"
                         />
 
                         <TextField
@@ -82,8 +121,9 @@ function Reg_Form() {
                             type="email"
                             className="w-100 my-3"
                             required
-                            // value={user.cemail}
-                            // onChange={handleInputs}
+                            value={user.cemail}
+                            onChange={handleInputs}
+                            name="cemail"
                         />
 
                         <TextField
@@ -93,8 +133,9 @@ function Reg_Form() {
                             type="Password"
                             className="w-100 mb-3"
                             required
-                            // value={user.password}
-                            // onChange={handleInputs}
+                            value={user.password}
+                            onChange={handleInputs}
+                            name="password"
                         />
 
                         <p
@@ -144,9 +185,11 @@ function Reg_Form() {
                                 boxShadow: " 0 0 1px 5px #A3B9FF",
                                 webkitBoxShadow: " 0 0 1px 5px #A3B9FF",
                             }}
+                            onClick={postData}
                         >
                             SIGN UP
                         </Button>
+
                         <p>
                             By signing up, you agree to our{" "}
                             <a
@@ -178,7 +221,7 @@ function Reg_Form() {
                         </h4>
                         <Facebook_btn />
                         <Google_btn />
-                    </div>
+                    </form>
                 </div>
             </section>
         </>
